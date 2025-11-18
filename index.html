@@ -1,239 +1,282 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nimesha Amandi</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nimesha Amandi - CV</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" xintegrity="sha512-SnH5WK+bZxgPHs44uWIX+LLMD/cdN+JzQ/KjTzYgO471Sj0b08rV+gT6r2iV8jD1Yj6tD5ZkX1Fv8WbQ3y3y2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        /* Define the A4-like canvas size for desktop, full width on mobile */
+        .cv-container {
+            max-width: 900px; /* Approx A4 width for web */
+            min-height: 1200px; /* Approx A4 height */
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* Custom Styles for Progress Bar Animation */
+        .progress-bar-fill {
+            height: 100%;
+            background-color: #5A1D4B;
+            transition: width 2s ease-out; /* Animation duration */
+            width: 0; /* Start at 0 width */
+        }
+
+        /* Keyframes for the Timeline Entry Fade-in Animation */
+        @keyframes fadeInSlide {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .timeline-item {
+            animation: fadeInSlide 1s ease-out both;
+        }
+
+        /* Timeline structure (for the White Column) */
+        .timeline {
+            position: relative;
+            padding-left: 20px;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            width: 3px;
+            background-color: #5A1D4B; /* Light gray line */
+        }
+        
+        .timeline-marker {
+            position: absolute;
+            left: -8px;
+            top: 5px;
+            width: 18px;
+            height: 18px;
+            background-color: #5A1D4B;
+            border-radius: 50%;
+            border: 4px solid #fff;
+            box-shadow: 0 0 0 2px #5A1D4B;
+            z-index: 10;
+        }
+  
+        .columnhead {
+          background-color: #5A1D4B;
+          color: #ffffff;
+        }
+          
+        .photo {
+          border: 4px solid white;
+        }
+
+        /* Custom animation delays */
+        .delay-1 { animation-delay: 0.2s; }
+        .delay-2 { animation-delay: 0.4s; }
+        .delay-3 { animation-delay: 0.6s; }
+        .delay-4 { animation-delay: 0.8s; }
+        .delay-5 { animation-delay: 1.0s; }
+        .delay-6 { animation-delay: 1.2s; }
+
+    </style>
+    <script>
+        // Set up the progress bar animation
+        document.addEventListener('DOMContentLoaded', () => {
+            const progressBars = document.querySelectorAll('.progress-bar-fill');
+            progressBars.forEach(bar => {
+                // Get the target width from the data attribute
+                const targetWidth = bar.getAttribute('data-width');
+                // Apply the width after a short delay to trigger the CSS transition
+                setTimeout(() => {
+                    bar.style.width = targetWidth;
+                }, 100);
+            });
+        });
+    </script>
 </head>
-<body>
-  <div class="cv-container">
-    <!-- Left Sidebar -->
-    <aside class="left-sidebar">
-      <!-- Profile Section -->
-      <div class="profile-section">
-        <img src="profile.jpeg" alt="Profile Picture">
-      </div>
 
-	  <!-- Personal Infomation -->
-	  <div class="cont-info">
-	  	<h2>Personal Infomation</h2>
-	  	<p><strong>Full Name&nbsp;:</strong>&nbsp;&nbsp;Thanthriwattage Dona Nimesha Amandi</p>
-	  	<p><strong>NIC No&nbsp;:</strong>&nbsp;&nbsp;200180002456</p>
-	  	<p><strong>Birthday&nbsp;:</strong>&nbsp;&nbsp;26 October 2001</p>
-	  	<p><strong>School&nbsp;:</strong>&nbsp;&nbsp;K/Polegoda National School</p>
-	  	<p><strong>Nationality&nbsp;:</strong>&nbsp;&nbsp;Sri Lankan
-	  </div>
+<body class="bg-#5A1D4B p-4 md:p-8">
 
-      <!-- Contact Information -->
-      <div class="contact-info">
-        <h2>Contact Me</h2>
-        <p><strong>Phone:</strong> +94 76 246 2936</p>
-        <p><strong>Email:</strong> na0.00td@gmail.com</p>
-        <p><strong>WhatsApp:</strong> +94 76 246 2936</p>
-      </div>
+    <div class="cv-container bg-white mx-auto rounded-lg overflow-hidden flex flex-col md:flex-row">
 
-<!-- Capabilities -->
-<section class="capabilities">
-  <h2>Capabilities</h2>
-  <ul>
-    <li>Data entry and document formatting.</li>
-    <li>Positive Attitudes.
-    <li>Effective team collaboration and leadership.</li>
-    <li>Ability to handle multiple tasks
-  </ul>
-</section>
+        <!-- 
+            DARK COLUMN (Profile, Contact, Social) 
+            This column is the first child, so it appears at the top on mobile.
+        -->
+        <div class=" columnhead w-full md:w-1/3 text-white p-8 space-y-8 rounded-t-lg md:rounded-l-lg md:rounded-tr-none">
 
+            <!-- Photo Space -->
+          <div class="photo w-32 h-32 bg-gray-700 mx-auto rounded-full overflow-hidden shadow-xl">
+               <img src="https://i.ibb.co/dwnmzTSh/1763050166156-2.jpg" alt="1763050166156-2" border="0"></a>
+            </div>
 
-      <!-- Skills -->
-      <div class="skills">
-        <h2>Skills</h2>
-        <div class="skill-bar">
-          <p>MS Word</p>
-          <div class="bar"><div style="width: 90%;"></div></div>
+            <div class="text-center mb-6">
+                <h1 class="text-3xl font-extrabold tracking-wider uppercase border-b-2 border-white pb-2 inline-block">Nimesha Amandi</h1>
+                <p class="text-lg font-light italic mt-1 text-gray-300">Assistant HR Manager, Office Assistant & Data Entry Operator</p>
+            </div>
+
+            <!-- Profile Section -->
+            <div>
+                <h2 class="text-xl font-bold mb-3 border-b border-gray-600 pb-1 uppercase">Profile</h2>
+                <p class="text-sm leading-relaxed text-gray-300">
+                    A highly organized and dedicated professional with versatile experience across human resources, office administration, and accurate data management. Eager to leverage proven proficiency in MS Office Suite, excellent communication skills in both English and Sinhala, and a Foundation Diploma in HRM to support efficient organizational operations and contribute positively to team success. Committed to continuous learning and maintaining high standards of data integrity and administrative support.
+                </p>
+            </div>
+
+            <!-- Contact Section -->
+            <div>
+                <h2 class="text-xl font-bold mb-3 border-b border-gray-600 pb-1 uppercase">Contact</h2>
+                <ul class="space-y-3 text-sm">
+                    <li class="flex items-center">
+                        <i class="fas fa-phone mr-3 w-4 text-center text-gray-400"></i>
+                        <span>+94 76 246 2936</span>
+                    </li>
+                    <li class="flex items-center">
+                        <i class="fab fa-whatsapp mr-3 w-4 text-center text-gray-400"></i>
+                        <span>+94 76 246 2936</span>
+                    </li>
+                    <li class="flex items-center">
+                        <i class="fas fa-envelope mr-3 w-4 text-center text-gray-400"></i>
+                        <span>nimeshaamandi0@gmail.com</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-map-marker-alt mr-3 mt-1 w-4 text-center text-gray-400"></i>
+                        <span>249/1, Gamagewatta, Mahagama.</span>
+                    </li>
+                </ul>
+            </div>
         </div>
-        <div class="skill-bar">
-          <p>MS Excel</p>
-          <div class="bar"><div style="width: 75%;"></div></div>
-        </div>
-        <div class="skill-bar">
-          <p>MS PowerPoint</p>
-          <div class="bar"><div style="width: 85%;"></div></div>
-        </div>
-        <div class="skill-bar">
-          <p>MS Access</p>
-          <div class="bar"><div style="width: 85%;"></div></div>
-        </div>
-        <div class="skill-bar">
-          <p>Sinhala Typing</p>
-          <div class="bar"><div style="width: 85%;"></div></div>
-        </div>
-        <div class="skill-bar">
-          <p>English Typing</p>
-          <div class="bar"><div style="width: 95%;"></div></div>
-        </div>
-      </div>
-      
-    </aside>
 
-    <!-- Right Content Area -->
-    <main class="right-content">
+        <!-- 
+            WHITE COLUMN (Skills, Education) 
+        -->
+        <div class="w-full md:w-2/3 bg-white p-8 space-y-10">
 
-    <!-- Name and Description -->
-    <div class="description" >
-    <p class="p1" >Nimesha Amandi</h1>
-    <p class="designation">Human Resource Manager & Data Entry Assistent</p>
+            <!-- Skills Section (Animated Progress Bars) -->
+            <div>
+                <h2 class="text-2xl font-bold mb-6 pb-2 border-b-2 border-black uppercase tracking-wider">Skills & Proficiency</h2>
+                
+                <div class="space-y-5">
+                    <!-- Skill Item -->
+                    <div class="skill-item">
+                        <p class="font-semibold mb-1">MS Word <span class="float-right text-gray-600"></span></p>
+                        <div class="bg-gray-200 h-2 rounded-full overflow-hidden">
+                            <div class="progress-bar-fill" data-width="70%"></div>
+                        </div>
+                    </div>
+                    
+                    <!-- Skill Item -->
+                    <div class="skill-item">
+                        <p class="font-semibold mb-1">MS Excel <span class="float-right text-gray-600"></span></p>
+                        <div class="bg-gray-200 h-2 rounded-full overflow-hidden">
+                            <div class="progress-bar-fill" data-width="75%"></div>
+                        </div>
+                    </div>
+
+                    <!-- Skill Item -->
+                    <div class="skill-item">
+                        <p class="font-semibold mb-1">MS PowerPoint <span class="float-right text-gray-600"></span></p>
+                        <div class="bg-gray-200 h-2 rounded-full overflow-hidden">
+                            <div class="progress-bar-fill" data-width="70%"></div>
+                        </div>
+                    </div>
+                    
+                    <!-- Skill Item -->
+                    <div class="skill-item">
+                        <p class="font-semibold mb-1">MS Access <span class="float-right text-gray-600"></span></p>
+                        <div class="bg-gray-200 h-2 rounded-full overflow-hidden">
+                            <div class="progress-bar-fill" data-width="70%"></div>
+                        </div>
+                    </div>
+                    
+                    <!-- Skill Item -->
+                    <div class="skill-item">
+                        <p class="font-semibold mb-1">English Typing <span class="float-right text-gray-600"></span></p>
+                        <div class="bg-gray-200 h-2 rounded-full overflow-hidden">
+                            <div class="progress-bar-fill" data-width="90%"></div>
+                        </div>
+                    </div>
+                    
+                    <!-- Skill Item -->
+                    <div class="skill-item">
+                        <p class="font-semibold mb-1">Sinhala Typing <span class="float-right text-gray-600"></span></p>
+                        <div class="bg-gray-200 h-2 rounded-full overflow-hidden">
+                            <div class="progress-bar-fill" data-width="70%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Education Section (Animated Timeline) -->
+            <div>
+                <h2 class="text-2xl font-bold mb-8 pb-2 border-b-2 border-black uppercase tracking-wider">Educational Qualifications</h2>
+                
+                <div class="timeline space-y-8">
+
+                    <!-- Timeline Item 1 - Diploma in English -->
+                    <div class="timeline-item relative pl-8 delay-1">
+                        <div class="timeline-marker"></div>
+                        <p class="text-sm font-bold text-black">2023</p>
+                        <h3 class="text-lg font-semibold mt-0.5">Diploma in English</h3>
+                        <p class="text-sm text-gray-700">Saegis Campus</p>
+                    </div>
+
+                    <!-- Timeline Item 2 - Foundation Diploma in HRM -->
+                    <div class="timeline-item relative pl-8 delay-2">
+                        <div class="timeline-marker"></div>
+                        <p class="text-sm font-bold text-black">2023</p>
+                        <h3 class="text-lg font-semibold mt-0.5">Foundation Diploma in HRM</h3>
+                        <p class="text-sm text-gray-700">Institute Of Nations Professional Management</p>
+                    </div>
+
+                    <!-- Timeline Item 3 - Computer Application Assistant Course -->
+                    <div class="timeline-item relative pl-8 delay-3">
+                        <div class="timeline-marker"></div>
+                        <p class="text-sm font-bold text-black">2023</p>
+                        <h3 class="text-lg font-semibold mt-0.5">Computer Application Assistant Course</h3>
+                        <p class="text-sm text-gray-700">AONO NAOKO Vocational Computer Training Institute</p>
+                    </div>
+                    
+                    <!-- Timeline Item 4 - Certificate Course in MS Office -->
+                    <div class="timeline-item relative pl-8 delay-4">
+                        <div class="timeline-marker"></div>
+                        <p class="text-sm font-bold text-black">2020</p>
+                        <h3 class="text-lg font-semibold mt-0.5">Certificate Course in MS Office</h3>
+                        <p class="text-sm text-gray-700">IT Hub Institute</p>
+                    </div>
+                    
+                    <!-- Timeline Item 5 - Advanced Level -->
+                    <div class="timeline-item relative pl-8 delay-5">
+                        <div class="timeline-marker"></div>
+                        <p class="text-sm font-bold text-black">2020</p>
+                        <h3 class="text-lg font-semibold mt-0.5">Advanced Level (A/L)</h3>
+                        <p class="text-sm text-gray-700">WP/HO/ Polegoda M.V. (Index no: 1700852)</p>
+                    </div>
+
+                    <!-- Timeline Item 6 - Ordinary Level -->
+                    <div class="timeline-item relative pl-8 delay-6">
+                        <div class="timeline-marker"></div>
+                        <p class="text-sm font-bold text-black">2017</p>
+                        <h3 class="text-lg font-semibold mt-0.5">Ordinary Level (O/L)</h3>
+                        <p class="text-sm text-gray-700">WP/Ho/Polegoda M. V. (Index no: 71022899, commenced 2007)</p>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
     </div>
 
-      <!-- About Me -->
-      <section class="about-me">
-        <h2>About Me</h2>
-        <p class="about" >Seeking a challenging opportunity where I will be able to utilize. my strong organizational skills, educational background and ability to work well with people, which will allow me to grow personally. I am self-motivated and able to work both independently and in a collaborative team environment.</p>
-      </section>
-
-	  <!-- Qualifications -->
-	 <div class="education">
-  		<h2>Educational Qualifications</h2>
-  		<p>
-  			<ul>
-  				<li><strong>G.C.E. Advans Level (2020)</strong>
-  					<table>
-  					<tr>
-  					<td>Media</td>
-  					<td></td>
-  					<td>&ndash;</td>
-  					<td></td>
-  					<td>C</td>
-  					</tr>
-  					<tr>
-  					<td>History</td>
-  					<td></td>
-  					<td>&ndash;</td>
-  					<td></td>
-  					<td>C</td>
-  					</tr>
-  					<tr>
-  					<td>Dancing</td>
-  					<td></td>
-  					<td>&ndash;</td>
-  					<td></td>
-  					<td>C</td>
-  					</tr>
-  					</table>
- 				</li>
- 				<br>
- 				<li><strong>G.C.E. Ordinary Level (2017)</strong>
-					<table>
-						<tr>
-							<td>Buddhism</td>
-							<td></td>
-							<td>&ndash;</td>
-							<td></td>
-							<td class="rslt" >B</td>
-							<td></td>
-							<td class="br" ></td>
-							<td>Sinhala</td>
-							<td></td>
-							<td>&ndash;</td>
-							<td></td>
-							<td class="rslt" >B</td>
-						</tr>
-						<tr>
-							<td>English</td>
-							<td></td>
-							<td>&ndash;</td>
-							<td></td>
-							<td class="rslt" >B</td>
-							<td>
-							<td class="br" ></td>
-							<td>Science</td>
-							<td></td>
-							<td>&ndash;</td>
-							<td></td>
-							<td class="rslt" >C</td>
-						</tr>
-						<tr>
-							<td>Mathematics</td>
-							<td></td>
-							<td>&ndash;</td>
-							<td></td>
-							<td class="rslt" >C</td>
-							<td></td>
-							<td class="br" ></td>
-							<td>History</td>
-							<td></td>
-							<td>&ndash;</td>
-							<td></td>
-							<td class="rslt" >C</td>
-						</tr>
-						<tr>
-							<td>Dancing</td>
-							<td></td>
-							<td>&ndash;</td>
-							<td></td>
-							<td class="rslt" >B</td>
-							<td></td>
-							<td class="br" ></td>
-							<td>Tamil</td>
-							<td></td>
-							<td>&ndash;</td>
-							<td></td>
-							<td class="rslt" >C</td>
-						</tr>
-						<tr>
-							<td>Comm. & Media</td>
-							<td></td>
-							<td>&ndash;</td>
-							<td></td>
-							<td class="rslt" >S</td>
-						</tr>
-</tr>
-</table>
-					</li>
-			</ul>
-		</p>
-	</div>
-	<div class="education2" >
-		<h2>Other Qualifications</h2>
-		<p>
-			<ul>
-				<p><li class="li" ><strong>Computer Applications Assistant Course - (NVQ Lv.III)</strong>
-					<li class="ul" >&nbsp;&nbsp;&nbsp;&nbsp;- Aono Naoko Vocational Computer Training Institute</li>
-				</li>
-				<li class="li" ><strong>Dip in English</strong>
-					<li class="ul" >&nbsp;&nbsp;&nbsp;&nbsp;- Saegis Campus</li>
-				</li>
-				<li class="li" ><strong>Dip in B.Human Resource Management</strong>
-					<li class="ul" >&nbsp;&nbsp;&nbsp;&nbsp;- Institute of Nations Professional Management</li>
-			</ul>
-  		</p>
-	</div>
-	
-	<!-- Date & Signature -->
-	<div class="bottom" >
-	<ul>
-	<p class="date" >
-		<li class="ul" >
-			<strong>Date&nbsp;:</strong>
-		<br>
-		<span class="ul" >
-			19/ December/ 2024
-		</li>
-	</p>
-	<br>
-	<p class="signature" >
-		<li class="ul" >
-				<strong>Signature</strong>
-		<br>
-		<span class="ul" >
-			..........................................
-		</span>
-		</li>
-	</p>
-	</ul>
-	</div>
-	
-    </main>
-  </div>
 </body>
 </html>
+
